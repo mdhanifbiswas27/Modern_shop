@@ -1,0 +1,28 @@
+ [
+      {
+        "name": "SONY",
+        "image_url": "https://i.ibb.co/TtvS86R/sony.png"
+      },
+      {
+        "name": "LG",
+        "image_url": "https://i.ibb.co/S5H3XZJ/Lg.jpg"
+      },
+      {
+        "name": "GOOGLE",
+        "image_url": "https://i.ibb.co/0tcFCLz/Google.png"
+      },
+      {
+        "name": "SAMSUNG",
+        "image_url": "https://i.ibb.co/XzHqPtG/samsung.webp"
+      },
+      {
+        "name": "APPLE",
+        "image_url": "https://i.ibb.co/kHzShV8/apple.png"
+      },
+      {
+        "name": "LENOVO",
+        "image_url": "https://i.ibb.co/5KJ1vkY/Lenovo.jpg"
+      }
+    ]
+
+  
