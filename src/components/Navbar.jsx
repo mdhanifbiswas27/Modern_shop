@@ -35,7 +35,7 @@ const Navbar = () => {
                         <div className=" flex items-center">
                             {
                                 user ? <>
-                                    <span className="mr-2 text-lg font-medium inline">{user.email} <img className="inline" src={user.photoURL} alt="photo" /></span>
+                                    <span className="mr-2 text-lg font-medium inline mt-3">{user.displayName} <img className="inline rounded-full h-[40px] w-[40px] " src={user.photoURL} alt="photo" /></span>
 
                                     <Link ><button onClick={handleLogOut} className="btn py-4 px-3 mt-5 hover:text-white bg-inherit hover:bg-[#E76D66]">Log Out</button></Link>
                                 </>:

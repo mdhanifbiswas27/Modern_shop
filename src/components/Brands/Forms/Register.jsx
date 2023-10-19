@@ -1,10 +1,11 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { authContext } from "../../AuthProvider";
+import { updateProfile } from "firebase/auth";
 
 
 const Register = () => {
-
+    const Navigate = useNavigate();
     const {createUser} = useContext(authContext);
 
     const handleRegister = e => {
@@ -13,11 +14,21 @@ const Register = () => {
         const photo = e.target.photo.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(name, photo, email, password);
+        
         // create user
         createUser(email,password)
-        .then(()=>{
+        .then((result)=>{
             alert('User created successfully')
+            Navigate('/');
+            // update profile
+            updateProfile(result.user,{
+                displayName: name,
+                photoURL:photo,
+            })
+            .then(()=>{
+                Navigate('/');
+            })
+            .catch()
         })
         .catch(()=>{
             alert(()=>{

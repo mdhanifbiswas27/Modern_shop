@@ -1,28 +1,45 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { IoIosContact } from 'react-icons/io';
 import { BsFillLockFill } from 'react-icons/bs';
 import { BsGoogle } from 'react-icons/bs';
 import { useContext } from "react";
 import { authContext } from "../../AuthProvider";
+import { updateProfile } from "firebase/auth";
 
 
 const Login = () => {
 
-    const {userLogin} = useContext(authContext)
+    const { userLogin, loginWithGoogle } = useContext(authContext);
+    const Navigate = useNavigate();
 
-    const handleLogin = e =>{
+    const handleGoogleLogIn = () => {
+        loginWithGoogle()
+            .then(() => {
+                alert('Login successfully')
+                Navigate('/');
+            })
+            .catch((error) => {
+                alert(console.error(error.message))
+            })
+    }
+    const handleLogin = e => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-       
+
         // login
-        userLogin(email,password)
-        .then(() =>{
-            alert('login successfully')
-        })
-        .catch(()=>{
-            alert('Email or password not mathch')
-        })
+        userLogin(email, password)
+            .then(() => {
+                alert('login successfully')
+                e.target.reset();
+                Navigate('/');
+
+                // update profile
+               
+            })
+            .catch(() => {
+                alert('Email or password not mathch')
+            })
 
 
     }
@@ -60,10 +77,12 @@ const Login = () => {
             <h2 className="text-center text-lg font-medium mb-5">Or sing up with</h2>
             <div>
                 <div className="flex justify-center">
-                    <div className="border-2 flex w-[200px]">
+                    <div onClick={handleGoogleLogIn} className="border-2 flex w-[200px]">
                         <div className="text-white bg-red-500  rounded-sm text-2xl p-2">
 
-                            <BsGoogle></BsGoogle>
+                            <button >
+                                <BsGoogle></BsGoogle>
+                            </button>
                         </div>
                         <p className="text-3xl font-bold ml-4 text-red-500">Google</p>
                     </div>
