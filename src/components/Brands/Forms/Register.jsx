@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../../AuthProvider";
 import { updateProfile } from "firebase/auth";
 
@@ -15,6 +15,19 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         
+        if (password.length < 6) {
+            alert('Password should be 6 character or more!');
+            return;
+        }
+        else if (!/[A-Z]/.test(password)) {
+            alert('Password should have a uppercase');
+            return;
+        }
+        else if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\]/.test(password)) {
+            alert('Password should have a special character');
+            return;
+        }
+
         // create user
         createUser(email,password)
         .then((result)=>{
