@@ -1,11 +1,37 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { authContext } from "../../AuthProvider";
 
 
 const Register = () => {
+
+    const {createUser} = useContext(authContext);
+
+    const handleRegister = e => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const photo = e.target.photo.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log(name, photo, email, password);
+        // create user
+        createUser(email,password)
+        .then(()=>{
+            alert('User created successfully')
+        })
+        .catch(()=>{
+            alert(()=>{
+                alert('Some thing wrong Please try again')
+            })
+        })
+
+    }
+
+
     return (
         <div className="mx-auto text-center pb-5">
             <h2 className="text-4xl font-extrabold text-[#E76D66] opacity-70 py-9">Register Your Account</h2>
-            <div className="mx-auto text-center max-w-[900px] bg-white p-10 rounded-md">
+            <form onSubmit={handleRegister}><div className="mx-auto text-center max-w-[900px] bg-white p-10 rounded-md">
                 <div className="grid md:grid-cols-2 lg:grid-cols-2 mx-auto text-center">
                     <input className="p-5 w-3/4 mt-4 bg-[#F5F6F7] ml-10 rounded-md border-2 border-[#E76D66] outline-none" type="text" name="name" id="" placeholder="Enter your name" />
                     <input className="p-5 w-3/4 mt-4 bg-[#F5F6F7] ml-10 rounded-md border-2 border-[#E76D66] outline-none" type="text" name="photo" id="" placeholder="Enter photo url" />
@@ -17,6 +43,7 @@ const Register = () => {
                 <input className="btn w-3/4 btn-outline hover:bg-[#E76D66] hover:outline-none mt-9" type="submit" value="REgister" />
                 <h1 className="text-xl font-medium mt-5">Already have an account?<button className="btn-link text-[#E76D66]"><Link to='/login'>Login</Link></button></h1>
             </div>
+            </form>
 
 
 

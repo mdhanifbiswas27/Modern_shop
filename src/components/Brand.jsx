@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types';
 
 const Brand = ({ brand }) => {
     const { name, image_url } = brand;
@@ -18,3 +18,6 @@ const Brand = ({ brand }) => {
 };
 
 export default Brand;
+Brand.propTypes= {
+    brand: PropTypes.node
+}

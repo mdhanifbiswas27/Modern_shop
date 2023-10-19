@@ -1,7 +1,19 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { authContext } from "./AuthProvider";
 
 
 const Navbar = () => {
+    const { user, userLogOut } = useContext(authContext)
+    const handleLogOut = () => {
+        userLogOut()
+            .then(() => {
+                alert('Log out successfully')
+            })
+            .catch(() => {
+                alert('Something went wrong')
+            })
+    }
     return (
         <div className="grid sm:grid-cols-1 lg:grid-cols-2 ">
             <div className="flex justify-between">
@@ -17,10 +29,22 @@ const Navbar = () => {
             </div>
 
             <div className="flex justify-between">
-                 <div></div>
-                 <div>
-                    <Link ><button className="btn py-4 px-3 mt-5 hover:text-white bg-inherit hover:bg-[#E76D66]">Log Out</button></Link>
-                 </div>
+                <div></div>
+                <div className="flex">
+                    <div className="flex items-center">
+                        <div className=" flex items-center">
+                            {
+                                user ? <>
+                                    <span className="mr-2 text-lg font-medium inline">{user.email} <img className="inline" src={user.photoURL} alt="photo" /></span>
+
+                                    <Link ><button onClick={handleLogOut} className="btn py-4 px-3 mt-5 hover:text-white bg-inherit hover:bg-[#E76D66]">Log Out</button></Link>
+                                </>:
+                                <Link to='/login'><button className="btn py-4 px-3 mt-5 hover:text-white bg-inherit hover:bg-[#E76D66]">LogIn</button></Link>
+                        }
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
     );
