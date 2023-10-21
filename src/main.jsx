@@ -16,6 +16,7 @@ import Error from './components/Error.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
 import Update from './components/Update.jsx';
 import BrandsProduct from './components/BrandsProduct.jsx';
+import ProductDetail from './components/ProductDetail.jsx';
 
 
 const router = createBrowserRouter([
@@ -45,14 +46,21 @@ const router = createBrowserRouter([
         element: <Login></Login>
       },
       {
-        path:'/update',
-        element:<Update></Update>
+        path:'/update/:_id',
+        element:<Update></Update>,
+        loader:({params})=> fetch(`http://localhost:5000/products/${params._id}`),
       },
       {
-        path:'/brandsProduct/:brand',
+        
+        path:'/brand/:id',
         element:<BrandsProduct></BrandsProduct>,
-        loader:({params})=> fetch(`http://localhost:5000/products/${params.name}`),
+        loader:()=> fetch('http://localhost:5000/products'),
        
+      },
+      {
+        path:'/details/:_id',
+        element:<ProductDetail></ProductDetail>,
+        loader:({params})=> fetch(`http://localhost:5000/products/${params._id}`),
       }
     ]
   },

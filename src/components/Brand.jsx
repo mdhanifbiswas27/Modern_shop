@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const Brand = ({ brand }) => {
-    const {   name, image_url } = brand;
+    const {id,   name, image_url } = brand;
     
     return (
-       <Link to={`/brandsProduct/${name}`}>
+       <Link to={`/brand/${id}`}>
         
            <div className="mt-10">
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -15,8 +15,7 @@ const Brand = ({ brand }) => {
                     
                 </div>
             </div>
-            {/* <img src={image_url} alt="" />
-            <h2>{name}</h2> */}
+            
         </div>
        </Link>
     );

@@ -1,6 +1,9 @@
+import { useLoaderData } from "react-router-dom";
 
 
 const Update = () => {
+    const loadProduct = useLoaderData();
+    console.log('update',loadProduct._id)
     const handleUpdateProduct = event =>{
         event.preventDefault();
     }

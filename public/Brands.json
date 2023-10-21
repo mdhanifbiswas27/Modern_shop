@@ -1,31 +1,31 @@
  [
       {
-        "brand":"SONY",
+        "id":"SONY",
         "name": "SONY",
         "image_url": "https://i.ibb.co/LSPbkzB/sony.png"
       },
       {
-        "brand": "LG",
+        "id": "LG",
         "name": "LG",
         "image_url": "https://i.ibb.co/3fq9hmz/lg.jpg"
       },
       {
-        "brand": "GOOGLE",
+        "id": "GOOGLE",
         "name": "GOOGLE",
         "image_url": "https://i.ibb.co/kcZPBV9/google.webp"
       },
       {
-        "brand": "HTC",
+        "id": "HTC",
         "name": "HTC",
         "image_url": "https://i.ibb.co/VJNN5Qp/htc2.jpg"
       },
       {
-        "brand": "APPLE",
+        "id": "APPLE",
         "name": "APPLE",
         "image_url": "https://i.ibb.co/kHzShV8/apple.png"
       },
       {
-        "brand": "LENOVO",
+        "id": "LENOVO",
         "name": "LENOVO",
         "image_url": "https://i.ibb.co/5YwMCLT/lenovo.jpg"
       }
