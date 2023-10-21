@@ -6,7 +6,7 @@ const OneProduct = ({ props }) => {
         <div>
             <div>
                 <div className="card  bg-base-100 shadow-xl">
-                    <figure><img src={photo} alt="Shoes" /></figure>
+                    <figure><img className="h-[280px]" src={photo} alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title ">
                             {name}

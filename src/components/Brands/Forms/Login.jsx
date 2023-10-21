@@ -5,6 +5,7 @@ import { BsGoogle } from 'react-icons/bs';
 import { useContext } from "react";
 import { authContext } from "../../AuthProvider";
 import { updateProfile } from "firebase/auth";
+import Swal from 'sweetalert2'
 
 
 const Login = () => {
@@ -15,11 +16,21 @@ const Login = () => {
     const handleGoogleLogIn = () => {
         loginWithGoogle()
             .then(() => {
-                alert('Login successfully')
+                Swal.fire({
+                    title: 'success!',
+                    text: 'Login successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Continue'
+                  })
                 Navigate('/');
             })
             .catch((error) => {
-                alert(console.error(error.message))
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'something wrong',
+                    icon: 'error',
+                    confirmButtonText: 'Cool'
+                  })
             })
     }
     const handleLogin = e => {
@@ -30,7 +41,12 @@ const Login = () => {
         // login
         userLogin(email, password)
             .then(() => {
-                alert('login successfully')
+                Swal.fire({
+                    title: 'success!',
+                    text: 'Login successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Continue'
+                  })
                 e.target.reset();
                 Navigate('/');
 
@@ -38,7 +54,12 @@ const Login = () => {
                
             })
             .catch(() => {
-                alert('Email or password not mathch')
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'something wrong',
+                    icon: 'error',
+                    confirmButtonText: 'Cool'
+                  })
             })
 
 

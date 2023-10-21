@@ -12,10 +12,10 @@ const ProductDetail = () => {
                 <div className="p-24"> <img src={photo} alt="" /></div>
 
                 <div className="p-24">
-                    <h2 className="text-2xl font-bold my-4">{name}</h2>
+                    <h2 className="text-2xl font-bold mb-4">{name}</h2>
                     <p className="text-xl font-medium text-[#E76D66] mb-4"> Price:{price}</p>
                     <p className="text-xl font-medium text-[#E76D66] mb-4">Rating: {rating} out of 5</p>
-                    <p className="text-lg font-medium text-center my-10">{description}</p>
+                    <p className="text-lg font-medium text-justify my-10">{description}</p>
                     
                     <hr />
                     <div className="flex my-10 gap-1">
