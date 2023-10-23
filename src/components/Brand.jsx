@@ -8,7 +8,7 @@ const Brand = ({ brand }) => {
        <Link to={`/brand/${id}`}>
         
            <div className="mt-10">
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card  bg-base-100 shadow-xl">
                 <figure><img className=" bg-[#F5F6F7] h-[205px] w-full" src={image_url} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>

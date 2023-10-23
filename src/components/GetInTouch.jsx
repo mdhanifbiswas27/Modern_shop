@@ -1,20 +1,20 @@
 import { FaFacebookF } from 'react-icons/fa';
 import { BsTwitter, BsInstagram } from 'react-icons/bs';
-// import { FaFacebookF } from 'react-icons/fa';
+
 
 const GetInTouch = () => {
     return (
         <div className='bg-white p-10 my-10 mx-auto'>
             <h1 className='text-4xl font-normal my-4 text-center'>Get us On social media</h1>
             <div className='mx-auto'>
-                <ul className='flex justify-between gap-6 p-2 mx-auto text-center my-5  w-[400px]'>
+                <ul className='flex justify-between gap-6 p-2 mx-auto text-center my-5  max-w-[400px]'>
                     <li className='bg-[#E76D66]  text-white p-3 text-4xl rounded-full'><FaFacebookF></FaFacebookF></li>
                     <li className='bg-[#E76D66]  text-white p-3 text-4xl rounded-full'><BsTwitter></BsTwitter></li>
                     <li className='bg-[#E76D66]  text-white p-3 text-4xl rounded-full'><BsInstagram></BsInstagram></li>
                 </ul>
             </div>
             <div>
-                <h2 className='text-center mb-4 text-lg font-medium mt-10'>
+                <h2 className='text-center mb-4 sm:text-base lg:text-lg font-medium mt-10'>
                     We Trying Out Best To make Your Life Easy,<br />
                     We Working to Make Our Client 100% Satisfied And To Lead A Nice Life
                 </h2>

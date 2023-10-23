@@ -5,7 +5,9 @@ import Swal from 'sweetalert2'
 
 
 const Navbar = () => {
-    const { user, userLogOut } = useContext(authContext)
+    const { user, userLogOut } = useContext(authContext);
+
+
     const handleLogOut = () => {
         userLogOut()
             .then(() => {
@@ -26,15 +28,16 @@ const Navbar = () => {
             })
     }
     return (
-        <div className="grid sm:grid-cols-1 lg:grid-cols-2 ">
-            <div className="flex justify-between">
-                <div className="mt-4"><img src='https://i.ibb.co/WB7RhBX/Logo.png' alt="" /></div>
+        <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 ">
+            <div className="">
+            
+                <div className="mt-4 w-[180px] "><img className="flex justify-center" src='https://i.ibb.co/WB7RhBX/Logo.png' alt="" /></div>
                 <div>
-                    <ul className="flex gap-5 text-lg ">
-                        <Link to='/'><li className="hover:text-[#E76D66] hover:bg-[#F5F6F7] border-b-8 border-b-transparent hover:border-b-8 hover:border-[#E76D66] py-6 px-3">Home</li></Link>
-                        <Link to='/addProduct'><li className="hover:text-[#E76D66] hover:bg-[#F5F6F7] border-b-8 border-b-transparent hover:border-b-8 hover:border-[#E76D66] py-6 px-3">Add Product</li></Link>
-                        <Link to='/myCart'><li className="hover:text-[#E76D66] hover:bg-[#F5F6F7] border-b-8 border-b-transparent hover:border-b-8 hover:border-[#E76D66] py-6 px-3">My Cart</li></Link>
-                        <Link to='/register'><li className="hover:text-[#E76D66] hover:bg-[#F5F6F7] border-b-8 border-b-transparent hover:border-b-8 hover:border-[#E76D66] py-6 px-3">Register</li></Link>
+                    <ul className="flex gap-5 text-lg sm:ml-8 lg:ml-0">
+                        <Link to='/'><li className="hover:text-[#E76D66] hover:bg-[#F5F6F7] border-b-8 border-b-transparent hover:border-b-8 hover:border-[#E76D66] py-6 sm:px-1 lg:px-3">Home</li></Link>
+                        <Link to='/addProduct'><li className="hover:text-[#E76D66] hover:bg-[#F5F6F7] border-b-8 border-b-transparent hover:border-b-8 hover:border-[#E76D66] py-6 sm:px-1 lg:px-3">Add Product</li></Link>
+                        <Link to='/myCart'><li className="hover:text-[#E76D66] hover:bg-[#F5F6F7] border-b-8 border-b-transparent hover:border-b-8 hover:border-[#E76D66] py-6 sm:px-1 lg:px-3">My Cart</li></Link>
+                        <Link to='/register'><li className="hover:text-[#E76D66] hover:bg-[#F5F6F7] border-b-8 border-b-transparent hover:border-b-8 hover:border-[#E76D66] py-6 sm:px-1 lg:px-3">Register</li></Link>
                     </ul>
                 </div>
             </div>

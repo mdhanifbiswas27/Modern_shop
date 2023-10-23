@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../../AuthProvider";
 import { updateProfile } from "firebase/auth";
+import Swal from 'sweetalert2'
 
 
 const Register = () => {
@@ -15,23 +16,48 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         
+        
         if (password.length < 6) {
-            alert('Password should be 6 character or more!');
+           
+            Swal.fire({
+                title: 'Error!',
+                text: 'Password should be 6 character or more',
+                icon: 'error',
+                confirmButtonText: 'OK'
+              })
             return;
         }
         else if (!/[A-Z]/.test(password)) {
-            alert('Password should have a uppercase');
+            
+            Swal.fire({
+                title: 'Error!',
+                text: 'Password should have a uppercase',
+                icon: 'error',
+                confirmButtonText: 'OK'
+              })
+
             return;
         }
         else if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\]/.test(password)) {
-            alert('Password should have a special character');
+            
+            Swal.fire({
+                title: 'Error!',
+                text: 'Password should have a special character',
+                icon: 'error',
+                confirmButtonText: 'OK'
+              })
             return;
         }
 
         // create user
         createUser(email,password)
         .then((result)=>{
-            alert('User created successfully')
+            Swal.fire({
+                title: 'success!',
+                text: 'Login successfully',
+                icon: 'success',
+                confirmButtonText: 'Continue'
+              })
             Navigate('/');
             // update profile
             updateProfile(result.user,{
@@ -42,11 +68,30 @@ const Register = () => {
                 Navigate('/');
             })
             .catch()
+
+            // send user data to mongodb
+            const shopUser ={email,name,photo};
+            fetch('http://localhost:5000/shopUser',{
+               method: 'POST',
+               headers: {
+                'content-type': 'application/json'
+               },
+               body: JSON.stringify(shopUser)
+            })
+            .then(res => res.json())
+            .then(data=>{
+                console.log(data);
+            })
+
         })
         .catch(()=>{
-            alert(()=>{
-                alert('Some thing wrong Please try again')
-            })
+            Swal.fire({
+                title: 'Error!',
+                text: 'something wrong',
+                icon: 'error',
+                confirmButtonText: 'Cool'
+              })
+            
         })
 
     }
