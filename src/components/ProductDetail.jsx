@@ -14,7 +14,7 @@ const ProductDetail = () => {
 
         // save to database user's order
         const userCart = { id,photo,price,name,email };
-        fetch('http://localhost:5000/userCart', {
+        fetch('https://my-assainment-tenth-assainment-server-site-ngyrcsy0t.vercel.app/userCart', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

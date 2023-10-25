@@ -71,7 +71,7 @@ const Register = () => {
 
             // send user data to mongodb
             const shopUser ={email,name,photo};
-            fetch('http://localhost:5000/shopUser',{
+            fetch('https://my-assainment-tenth-assainment-server-site-ngyrcsy0t.vercel.app/shopUser',{
                method: 'POST',
                headers: {
                 'content-type': 'application/json'
