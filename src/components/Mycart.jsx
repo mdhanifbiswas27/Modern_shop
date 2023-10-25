@@ -17,7 +17,7 @@ const Mycart = () => {
     
     return (
         <div>
-          <h2>Your selected products</h2>
+          <h2 className="text-2xl font-bold text-blue-600/60 ">Your selected products:</h2>
             
             {
                 cart.map(product =><CartProduct key={product._id} cart={product}></CartProduct>)
