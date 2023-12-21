@@ -16,7 +16,7 @@ const Update = () => {
         const rating = event.target.rating.value;
         const updateProduct = {name, photo, brand, type, price, rating}
 
-        fetch(`https://my-assainment-tenth-assainment-server-site-ngyrcsy0t.vercel.app/products/${_id}`,{
+        fetch(`http://localhost:5000/products/${_id}`,{
             method:'PuT',
             headers:{
                 'content-type': 'application/json'

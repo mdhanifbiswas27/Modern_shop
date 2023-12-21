@@ -36,7 +36,7 @@ const router = createBrowserRouter([
       {
         path: '/myCart',
         element: <PrivateRoute><Mycart></Mycart></PrivateRoute>,
-        loader:()=> fetch('https://my-assainment-tenth-assainment-server-site-ngyrcsy0t.vercel.app/userCart'),
+        loader:()=> fetch('http://localhost:5000/userCart'),
       },
       {
         path: '/register',
@@ -51,18 +51,18 @@ const router = createBrowserRouter([
         
         path:'/brand/:id',
         element:<BrandsProduct></BrandsProduct>,
-        loader:()=> fetch('https://my-assainment-tenth-assainment-server-site-ngyrcsy0t.vercel.app/products'),
+        loader:()=> fetch('http://localhost:5000/products'),
        
       },
       {
         path:'/details/:_id',
         element:<PrivateRoute><ProductDetail></ProductDetail></PrivateRoute>,
-        loader:({params})=> fetch(`https://my-assainment-tenth-assainment-server-site-ngyrcsy0t.vercel.app/products/${params._id}`),
+        loader:({params})=> fetch(`http://localhost:5000/products/${params._id}`),
       },
       {
         path:'/update/:_id',
         element:<PrivateRoute><Update></Update></PrivateRoute>,
-        loader:({params})=> fetch(`https://my-assainment-tenth-assainment-server-site-ngyrcsy0t.vercel.app/products/${params._id}`),
+        loader:({params})=> fetch(`http://localhost:5000/products/${params._id}`),
       },
     ]
   },

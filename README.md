@@ -16,5 +16,8 @@ Welcome to Modern-Shop, your go-to destination for modern and innovative electro
 - user can get his favorite brand product to buy
 - user can register his account with gmail and password as well as just only gmail
 
+# 2 unique features:
 
+- customer can Provide their personal opinion and Rating..
+- Other user can take idea about product to see the review.
 
