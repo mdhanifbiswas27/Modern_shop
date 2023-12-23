@@ -1,5 +1,5 @@
 # Digital store
-* live link: https://lively-cupcake-6e72f2.netlify.app/
+* live link: [https://lively-cupcake-6e72f2.netlify.app/](https://65864f231eb607472ac8b31a--silly-crepe-8e35e9.netlify.app/)
 ##
 ### Description:
 Welcome to Modern-Shop, your go-to destination for modern and innovative electronics goods! Elevate your lifestyle with our curated selection of the latest gadgets, stylish appliances, and cutting-edge technology. At Modern-Shop, we strive to bring you the best in the world of electronics, ensuring a seamless and contemporary shopping experience. Step into the future with Modern-Shop – where technology meets sophistication.
