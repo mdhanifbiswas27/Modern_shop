@@ -8,13 +8,18 @@ import '@smastrom/react-rating/style.css'
 const ProductDetail = () => {
     const { user } = useContext(authContext)
     const [rating, setRating] = useState(0);
-    const [customerReview, setCustomerReview] = useState([1]);
+    const [customerReview, setCustomerReview] = useState([]);
+    
+    const loadProduct = useLoaderData();
+    const { name, photo, price, description, _id } = loadProduct;
 
     useEffect(() => {
         fetch('http://localhost:5000/customerReviews')
             .then(res => res.json())
-            .then(data => setCustomerReview(data))
-    }, [])
+            .then(data =>{
+                const reviewItem = data.filter(item => item.productId === _id);
+                setCustomerReview(reviewItem)})
+    }, [_id])
     const handleReview = event => {
         event.preventDefault();
         const form = event.target;
@@ -70,8 +75,7 @@ const ProductDetail = () => {
                 }
             })
     }
-    const loadProduct = useLoaderData();
-    const { name, photo, price, description, _id } = loadProduct;
+   
 
 
 
