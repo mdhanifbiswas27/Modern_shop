@@ -24,7 +24,7 @@ const CartProduct = ({ cart }) => {
                 //     'success'
                 //   )
 
-                fetch(`http://localhost:5000/userCart/${_id}`, {
+                fetch(`https://my-assainment-tenth-assainment-server-site-awxsfnusn.vercel.app/userCart/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json()

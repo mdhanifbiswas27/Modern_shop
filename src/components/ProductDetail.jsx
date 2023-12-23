@@ -14,7 +14,7 @@ const ProductDetail = () => {
     const { name, photo, price, description, _id } = loadProduct;
 
     useEffect(() => {
-        fetch('http://localhost:5000/customerReviews')
+        fetch('https://my-assainment-tenth-assainment-server-site-awxsfnusn.vercel.app/customerReviews')
             .then(res => res.json())
             .then(data =>{
                 const reviewItem = data.filter(item => item.productId === _id);
@@ -30,7 +30,7 @@ const ProductDetail = () => {
         const NewReview = { productId, customerRating, comment, ReviewAre };
         console.log(NewReview);
 
-        fetch('http://localhost:5000/customerReviews', {
+        fetch('https://my-assainment-tenth-assainment-server-site-awxsfnusn.vercel.app/customerReviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -55,7 +55,7 @@ const ProductDetail = () => {
 
         // save to database user's order
         const userCart = { id, photo, price, name, email };
-        fetch('http://localhost:5000/userCart', {
+        fetch('https://my-assainment-tenth-assainment-server-site-awxsfnusn.vercel.app/userCart', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
