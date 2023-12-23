@@ -19,5 +19,5 @@ Welcome to Modern-Shop, your go-to destination for modern and innovative electro
 # 2 unique features:
 
 - customer can Provide their personal opinion and Rating..
-- Other user can take idea about product to see the review.
+- Other user can take idea about product to see the review of other customers reviews.
 
